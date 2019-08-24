@@ -1,0 +1,7 @@
+The scraping using a combination of bash and python to collect data, and stata to merge and clean up.
+
+master_loop.sh: loops through the days in days.txt, calling the download script, then the python data cleaner.
+download_unzip.sh: downloads, unzips data for a given day, then deletes the .zip
+clean_csv.py: steps through the unzipped .csv and aggregates requests to cik level. Produces count_*.txt files, which are CSV with (cik,count)
+stata_merge.do: converts count_*.txt files to stata datasets, creates a date variable, then merges all data.
+
